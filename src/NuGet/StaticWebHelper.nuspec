@@ -7,6 +7,7 @@
     <authors>Mads Kristensen</authors>
     <owners>Mads Kristensen</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectUrl>https://github.com/madskristensen/StaticWebHelper</projectUrl>
     <description>Helps optimize static websites by fingerprinting resources</description>
     <releaseNotes>Initial release.</releaseNotes>
     <copyright>Copyright 2014</copyright>
