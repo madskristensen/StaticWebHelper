@@ -37,7 +37,7 @@ Take this JavaScript reference:
 The browser will automatically cache `scripts/menu.js`, so that when you
 update the file, the browser will serve the old version from its cache.
 
-To fix that, we need FingerPrinting. With StaticWebHelper the above script
+To fix that, we need FingerPrinting. With StaticWebHelper the above `script`
 tag will be rendered like this:
 
 ```html
