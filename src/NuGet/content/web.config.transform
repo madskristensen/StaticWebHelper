@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <appSettings>
+    <add key="cdnPath" value="" />
+    <add key="minify" value="false" />
+  </appSettings>
+  <system.webServer>
+    <handlers>
+      <add name="FingerPrint" verb="GET" path="*.html" type="StaticWebHelper.FingerPrintHandler" />
+    </handlers>
+    <rewrite>
+      <rules>
+        <rule name="FingerPrint" stopProcessing="true">
+          <match url="(.+)(\.[0-9]{18})\.([a-z]{2,4})$" />
+          <action type="Rewrite" url="{R:1}.{R:3}" />
+        </rule>
+      </rules>
+    </rewrite>
+  </system.webServer>
+</configuration>

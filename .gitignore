@@ -5,6 +5,8 @@
 *.suo
 *.user
 *.sln.docstates
+*.nupkg
+*/nuget/lib
 
 # Build results
 [Dd]ebug/
