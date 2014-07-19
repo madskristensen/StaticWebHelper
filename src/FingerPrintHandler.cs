@@ -31,11 +31,8 @@ namespace StaticWebHelper
                 return Print(context, match);
             });
 
-            // Trim whitespace
             if ("true".Equals(ConfigurationManager.AppSettings.Get("minify"), StringComparison.OrdinalIgnoreCase))
             {
-                //html = Regex.Replace(html, @">\s+<", "><");
-                //html = Regex.Replace(html, @"\s+", " ");
                 html = Minify(html);
             }
 
@@ -47,7 +44,6 @@ namespace StaticWebHelper
             context.Response.AddFileDependency(file);
             context.Response.Cache.SetValidUntilExpires(true);
             context.Response.Cache.SetCacheability(HttpCacheability.ServerAndPrivate);
-            context.Response.Cache.SetExpires(DateTime.Now.AddDays(7));
         }
 
         private static string Minify(string html)

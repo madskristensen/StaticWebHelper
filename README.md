@@ -6,6 +6,8 @@ This NuGet package helps with static .html files. Here's what it does:
 1. Minifies HTML including embedded script and style blocks
 2. FingerPrints references to images, script and css files
 3. Makes it easy to serve static resources from CDNs or cookieless domains
+4. Handles Conditional GET requests (304's)
+5. No code required. It works automatically after installing the Nuget Package.
 
 It works by registering an HTTP Handler that takes over .html files. After
 doing the transformations, it output caches the response until the .html file

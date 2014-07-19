@@ -5,6 +5,35 @@ VisualStudioVersion = 12.0.30716.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaticWebHelper", "src\StaticWebHelper.csproj", "{407CB74E-C62D-4A0D-86D3-BF49C894E32E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{641625BC-404B-46B9-8BC4-489F2DBFDA44}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Sample", "http://localhost:27910", "{743D28C6-693B-4A18-B539-2250257EBE79}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		ProjectReferences = "{407cb74e-c62d-4a0d-86d3-bf49c894e32e}|StaticWebHelper.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_27910"
+		Debug.AspNetCompiler.PhysicalPath = "Sample\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_27910\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_27910"
+		Release.AspNetCompiler.PhysicalPath = "Sample\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_27910\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "Sample\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +44,10 @@ Global
 		{407CB74E-C62D-4A0D-86D3-BF49C894E32E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{407CB74E-C62D-4A0D-86D3-BF49C894E32E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{407CB74E-C62D-4A0D-86D3-BF49C894E32E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{743D28C6-693B-4A18-B539-2250257EBE79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{743D28C6-693B-4A18-B539-2250257EBE79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{743D28C6-693B-4A18-B539-2250257EBE79}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{743D28C6-693B-4A18-B539-2250257EBE79}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
