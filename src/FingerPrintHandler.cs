@@ -3,6 +3,7 @@ using System.Configuration;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Web;
+using WebMarkupMin.Core;
 using WebMarkupMin.Core.Minifiers;
 using WebMarkupMin.Core.Settings;
 
@@ -51,8 +52,9 @@ namespace StaticWebHelper
             var settings = new HtmlMinificationSettings
             {
                 RemoveOptionalEndTags = false,
-                AttributeQuotesRemovalMode = WebMarkupMin.Core.HtmlAttributeQuotesRemovalMode.KeepQuotes,
+                AttributeQuotesRemovalMode = HtmlAttributeQuotesRemovalMode.Html5,
                 RemoveRedundantAttributes = false,
+                WhitespaceMinificationMode = WhitespaceMinificationMode.Aggressive,
                 MinifyEmbeddedCssCode = true,
                 MinifyEmbeddedJsCode = true,
                 MinifyInlineCssCode = true,
