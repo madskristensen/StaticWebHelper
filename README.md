@@ -1,6 +1,8 @@
 StaticWebHelper
 ===============
 
+[![Build status](https://ci.appveyor.com/api/projects/status/pjx1c7v1r4rn1h7u)](https://ci.appveyor.com/project/madskristensen/staticwebhelper)
+
 This NuGet package helps with static .html files. Here's what it does:
 
 1. Minifies HTML including embedded script and style blocks
