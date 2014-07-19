@@ -11,7 +11,7 @@ It works by registering an HTTP Handler that takes over .html files. After
 doing the transformations, it output caches the response until the .html file
 itself or one of the referenced resources are updated on disk.
 
-Install the (NuGet Package)[http://www.nuget.org/packages/StaticWebHelper/]
+Install the [NuGet Package](http://www.nuget.org/packages/StaticWebHelper/)
 
 ### 1. Minifying HTML
 
