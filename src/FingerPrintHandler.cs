@@ -13,6 +13,7 @@ namespace StaticWebHelper
     public class FingerPrintHandler : IHttpHandler
     {
         private static Regex _regex = new Regex(@"<(link|script|img).*(href|src)=(""|')(?<href>[^""'].*?)(""|').*?>");
+        private static List<string> _invalid = new List<string>() { "", ".html", ".htm" };
         private static string _cdnPath = ConfigurationManager.AppSettings.Get("cdnPath");
 
         public FingerPrintHandler()
@@ -106,8 +107,6 @@ namespace StaticWebHelper
 
             return value.Replace(path, full.OriginalString);
         }
-
-        private static List<string> _invalid = new List<string>() { string.Empty, ".html", ".htm" };
 
         private static bool IsValidUrl(string path, out Uri url)
         {
