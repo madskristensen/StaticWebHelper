@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
 using System.Text.RegularExpressions;
@@ -106,10 +107,12 @@ namespace StaticWebHelper
             return value.Replace(path, full.OriginalString);
         }
 
+        private static List<string> _invalid = new List<string>() { string.Empty, ".html", ".htm" };
+
         private static bool IsValidUrl(string path, out Uri url)
         {
             return Uri.TryCreate(path, UriKind.Relative, out url) &&
-                   Path.GetExtension(url.OriginalString) != "" && // Only files with extensions
+                   !_invalid.Contains(Path.GetExtension(url.OriginalString)) && // Only files with extensions
                    !url.OriginalString.StartsWith("//"); // Not protocol relative paths since they are absolute
         }
 
