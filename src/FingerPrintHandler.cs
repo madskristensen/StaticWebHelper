@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
 using System.Text.RegularExpressions;
@@ -12,8 +11,7 @@ namespace StaticWebHelper
 {
     public class FingerPrintHandler : IHttpHandler
     {
-        private static Regex _regex = new Regex(@"<(link|script|img).*(href|src)=(""|')(?<href>[^""'].*?)(""|').*?>");
-        private static List<string> _invalid = new List<string>() { "", ".html", ".htm" };
+        private static Regex _regex = new Regex(@"<(link|script|img).+(href|src)=(?<quote>\""|'|)(?<href>[^\""']+\.(css|js|png|jpg|jpeg|gif|ico|svg|json|xml|woff|ttf|eot))\k<quote>.*?>");
         private static string _cdnPath = ConfigurationManager.AppSettings.Get("cdnPath");
 
         public FingerPrintHandler()
@@ -111,7 +109,6 @@ namespace StaticWebHelper
         private static bool IsValidUrl(string path, out Uri url)
         {
             return Uri.TryCreate(path, UriKind.Relative, out url) &&
-                   !_invalid.Contains(Path.GetExtension(url.OriginalString)) && // Only files with extensions
                    !url.OriginalString.StartsWith("//"); // Not protocol relative paths since they are absolute
         }
 
