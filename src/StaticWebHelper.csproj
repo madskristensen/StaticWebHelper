@@ -55,7 +55,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
     <None Include="build-nuget.cmd" />
     <None Include="key.snk" />
     <None Include="NuGet\content\web.config.transform" />
