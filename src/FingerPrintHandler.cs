@@ -86,9 +86,10 @@ namespace StaticWebHelper
             context.Response.AddFileDependency(physical);
 
             DateTime lastWrite = File.GetLastWriteTimeUtc(physical);
-            int index = value.LastIndexOf('.');
+            int index = path.LastIndexOf('.');
 
-            return value.Insert(index, "." + lastWrite.Ticks);
+            string pathFingerprint = path.Insert(index, "." + lastWrite.Ticks);                        
+            return value.Replace(path, pathFingerprint);
         }
 
         private static string AddCdn(HttpContext context, string value, string path)
