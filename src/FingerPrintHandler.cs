@@ -4,8 +4,6 @@ using System.IO;
 using System.Text.RegularExpressions;
 using System.Web;
 using WebMarkupMin.Core;
-using WebMarkupMin.Core.Minifiers;
-using WebMarkupMin.Core.Settings;
 
 namespace StaticWebHelper
 {
@@ -88,7 +86,7 @@ namespace StaticWebHelper
             DateTime lastWrite = File.GetLastWriteTimeUtc(physical);
             int index = path.LastIndexOf('.');
 
-            string pathFingerprint = path.Insert(index, "." + lastWrite.Ticks);                        
+            string pathFingerprint = path.Insert(index, "." + lastWrite.Ticks);
             return value.Replace(path, pathFingerprint);
         }
 
